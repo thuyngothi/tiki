@@ -1,17 +1,21 @@
 
-import { Breadcrumb, Divider, Flex } from 'antd'
+import { Breadcrumb, Divider, Flex, Typography } from 'antd'
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
 import './ProductDetail.scss'
-import top_deal from '../../assets/Category/top_deal_prod.png'
+import top_deal_prod from '../../assets/Products/top_deal/top_deal_prod.png'
 import real_prod from '../../assets/Products/top_deal/real_prod.png'
+import turnback from '../../assets/Products/top_deal/turnback.png'
 
 const images = [
     'https://salt.tikicdn.com/cache/750x750/ts/product/22/cb/a9/524a27dcd45e8a13ae6eecb3dfacba7c.jpg.webp',
     'https://salt.tikicdn.com/cache/100x100/ts/product/71/c2/4b/58afce3cf6c10b648d1d28252fdf5e48.jpg.webp',
     'https://salt.tikicdn.com/cache/100x100/ts/product/c3/51/d8/908cd5310a98a19d52d2be9146769fa3.png.webp',
 ]
+
+const { Text } = Typography
+
 const ProductDetail = () => {
     const [imageIndex, setImageIndex] = useState(0);
     return (
@@ -73,9 +77,6 @@ const ProductDetail = () => {
                         <img src={images[imageIndex]}></img>
                     </Flex>
                     <Flex className='list-image' gap='small'>
-                        {/* <img src='https://salt.tikicdn.com/cache/750x750/ts/product/22/cb/a9/524a27dcd45e8a13ae6eecb3dfacba7c.jpg.webp'></img>
-                        <img src='https://salt.tikicdn.com/cache/100x100/ts/product/71/c2/4b/58afce3cf6c10b648d1d28252fdf5e48.jpg.webp'></img>
-                        <img src='https://salt.tikicdn.com/cache/100x100/ts/product/c3/51/d8/908cd5310a98a19d52d2be9146769fa3.png.webp'></img> */}
                         {
                             images.map((image, index) => (
                                 <img 
@@ -91,8 +92,17 @@ const ProductDetail = () => {
                     </Flex>
                 </Flex>
 
-                <Flex>
-                    
+                <Flex vertical className='prod-content wrapper'
+                    style={{
+                        width:'55%'
+                    }} >
+                    <Flex justify='space-around'>
+                        <img style={{width:'85px', height:'20px'}} src={top_deal_prod}></img>
+                        <img style={{width:'95px', height:'20px'}} src={real_prod}></img>
+                        <img style={{width:'100px', height:'20px'}} src={turnback}></img>
+                        <Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text>
+                        <Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text><Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text>
+                    </Flex>
                 </Flex>
             </Flex>
 
