@@ -1,0 +1,57 @@
+$main-color: rgb(10, 104, 255);
+$hover-color:#808089;
+
+.App {
+  text-align: center;
+}
+.container-max{
+  max-width: 1392px !important;
+}
+
+.header-container {
+  height: max-content;
+  padding: 12px 0;
+  background-color: #fff;
+}
+
+.wrapper {
+  text-align: left;
+  max-width: 100%;
+  background-color: #fff;
+  margin: 16px;
+  padding: 12px;
+  margin-right: 0;
+  border-radius: 14px;
+}
+
+
+// ================ Return policy ===========================
+.return-policy {
+    background-color: rgb(255, 232, 128);
+    height: 40px;
+}
+.return-policy img {
+    max-height: 20px;
+    max-width: 83px;  
+    &:hover {
+      cursor: pointer;
+    }  
+}
+
+.return-policy .ant-typography {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// ================== SIDER CSS ===========================
+.sider {
+  background-color: #f5f5fa;
+  max-height: max-content;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 300px !important;
+}
+
+
+
+

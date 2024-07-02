@@ -1,0 +1,41 @@
+
+// .sidebar-menu  {
+//     width: 300px;
+// }
+.sidebar-menu {
+    background-color: #f5f5fa;
+}
+.menu {
+    border-radius: 10px !important;
+    background-color: #fff;
+}
+.sidebar-menu .ant-flex {
+    padding: 7px 16px;
+}
+.sidebar-menu .menu-image{
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+.sidebar-menu .title {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+.sidebar-menu .menu-item {
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(39, 39, 42, 0.12);
+    }
+}
+.sidebar-menu .menu-item p {
+    color: #000;
+}
+
+.special-menu {
+    height: max-content;
+}

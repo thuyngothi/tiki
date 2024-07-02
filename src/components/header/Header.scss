@@ -1,0 +1,180 @@
+$header-color:#808089;
+$main-color: rgb(10, 104, 255);
+
+.header-content{
+    margin: 0 auto;
+    flex:1;
+    max-width: 1392px;
+}
+.logo img {
+    height: 40px;
+    width: 96px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.logo .logo-text {
+    color: rgb(0, 62, 161);
+    font-weight: 500;
+    line-height: 2rem;
+    font-size: 1rem;
+    &:hover{
+        opacity: .8;
+        cursor: pointer;
+    }
+}
+.header-menu {
+    list-style: none;
+    display: flex;
+    line-height: 2rem;
+}
+.header-menu li {
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+.header-menu a {
+    color: $header-color;
+}
+
+.header-btn.ant-btn-primary {
+    background-color: #fff;
+    color: $main-color;
+    font-weight: 500;
+    &:hover {
+        background-color: rgba(0, 96, 255, 0.12) !important;
+        color: $main-color !important;
+    }
+}
+.account-btn.ant-btn-primary {
+    background-color: #fff;
+    color: $header-color;
+    &:hover {
+        background-color: rgba(39, 39, 42, 0.12) !important;
+        color: $header-color !important;
+    }
+}
+.header-icon {
+    font-size: 1.5rem;
+}
+
+// =========================== Delivery location ==================
+.delivery-location:hover {
+    cursor: pointer;
+}
+.delivery-location img{
+    width: 20px;
+    height: 20px;
+}
+.delivery-location .ant-typography {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.delivery-location .address {
+    color: #000;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-right: 100px;
+}
+
+// ========================== Header Modal ========================
+.account-modal {
+    width: 60%;
+    padding: 40px 45px 24px;
+}
+.ant-modal-content {
+    padding: 0 !important;
+    border-radius: 16px !important;
+}
+.register-phone {
+    height: 60px;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 2rem;
+    color: #504f4f !important;
+    margin-bottom: 16px;
+}
+.register-btn {
+    height: 60px;
+    font-size: 1.8rem;
+}
+
+.account-modal .login-icon {
+    width: 60px;
+}
+.ant-modal-close { 
+    width: 55px !important;
+    height: 55px !important;
+    background-color: #fff !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    top:-15px !important;
+    right: -15px !important;
+}
+.ant-modal-close-x{
+    color: #777;
+    font-size : 28px !important; 
+}
+.acc-modal-side {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);;
+}
+.acc-modal-side img {
+    width: 60%;
+    // align-self: center;
+}
+.acc-modal-side .ant-typography {
+    color: #0b74e5;
+}
+
+// ================= location-modal ================\
+.location-modal{
+    border-radius: 0px !important;
+}
+.location-modal .modal-content{
+    padding: 24px 50px;
+}
+.location-modal .ant-typography {
+    font-size: 1rem;
+}
+
+.location-modal .login-to-delivery {
+    padding: 20px 30px;
+    background-color: rgb(253, 216, 53);
+    font-size: 15px;  
+    color: #000;
+    &:hover{
+        opacity: .7;
+        background-color: rgb(253, 216, 53) !important;
+        color: #000 !important;
+    }
+}
+
+.location-modal .decide-btn {
+    background-color: rgb(255, 66, 78);
+    width: 296px;
+    height: 40px;
+    &:hover{
+        opacity: .7;
+        background-color: rgb(255, 66, 78) !important;
+        color: #fff !important;
+    }
+}
+
+.location-modal .choose-address {
+    padding-top: 16px;
+}
+.location-modal .ant-modal-close { 
+    width: 30px !important;
+    height: 30px !important;
+    top:-10px !important;
+    right: -10px !important;
+    border: 1px solid #ccc;
+}
+.location-modal .ant-modal-close-x{
+    font-size : 16px !important; 
+}

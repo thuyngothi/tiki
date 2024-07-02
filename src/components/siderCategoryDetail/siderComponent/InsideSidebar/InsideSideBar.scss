@@ -1,0 +1,27 @@
+
+.inside-menu{
+    background-color: #fff;
+    width: 230px;
+}
+.inside-menu .title {
+    line-height: 40px;
+    font-size: 1rem;
+   font-weight: 500;
+}
+
+.inside-menu .ant-menu-submenu {
+    font-weight: 500;
+    text-align: left;
+}
+
+.inside-menu .ant-menu-submenu .ant-menu-item {
+    font-weight: 400 ;
+    height: 30px;
+    font-size: 13px;
+    color: #4d4d4d;
+    &:hover {
+        color: #036ffc !important;
+        text-decoration: underline;
+        background-color: #fff !important;
+    }
+}

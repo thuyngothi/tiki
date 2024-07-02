@@ -1,0 +1,71 @@
+
+//=========================== Slider ==============================
+
+.inside-slider {
+    background-color: #f5f5fa;
+    padding: 0;
+    position: relative;
+}
+
+// .inside-slider .main-img {
+//     position: relative;
+//     overflow: hidden;
+
+// }
+
+// .main-img img {
+//     position: absolute;
+//     z-index: 2;
+// }
+.inside-slider .ant-typography {
+    margin-bottom: 8px;
+}
+
+.inside-slider .push-btn {
+    display: inline-block;
+    font-size: 2rem;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .5;
+    &:hover{
+        opacity: 1;
+    }
+    z-index: 3;
+}
+.inside-slider .prev {
+    left: 0;
+}
+.inside-slider .next {
+    right: 0;
+}
+.inside-slider .slide{
+    display: none;
+    animation: fade 1s;
+}
+.inside-slider .slide.active {
+    display: flex;
+}
+.inside-slider .slide-item{
+    background-color: #fff;
+    border-radius: 8px;
+}
+.inside-slider .slide-content {
+    padding: 16px 8px;
+}
+.inside-slider .list-img {
+    padding: 0 8px;
+}
+
+@keyframes fade {
+    from {
+        opacity: .5;
+    }
+    to{
+        opacity: 1;
+    }
+}

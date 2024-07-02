@@ -1,0 +1,157 @@
+.home-slider {
+    padding: 16px;
+    border-radius: 14px;
+    background-color: #fff;
+    margin-left: 16px;
+    position: relative;
+}
+
+.home-slider .slider-item {
+    display: none;
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.home-slider .slider-item.active {
+    display: block;
+}
+
+.home-slider img {
+    border-radius: 14px;
+    margin: 0 10px;
+    width: 48%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.home-slider .push-btn {
+    font-size: 1.5rem;
+    background-color: #fff;
+    padding: 5px 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    color: rgb(10, 104, 255);
+    transform: translateY(-50%);
+    display: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.home-slider .prev {
+    left: 35px;
+}
+
+.home-slider .next {
+    right: 35px;
+}
+
+.home-slider:hover .push-btn {
+    display: block;
+}
+
+// ======================== Categrory CSS =========================
+
+.category-list img {
+    width: 64px;
+    height: 64px;
+    border: 1px solid #e6e6e6;
+    border-radius: 35%;
+    margin-bottom: 8px;
+}
+
+.category-item {
+    flex: 1;
+    margin: 12px;
+    padding: 0 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.category-item .category-name {
+    font-size: 1rem;
+}
+
+
+// ========================= TOP DEAL =========================
+.top-deal {
+    padding: 16px;
+}
+
+.top-deal .banner-img {
+    width: 204px;
+    padding-bottom: 16px;
+}
+
+.topdeal-list .ant-btn {
+    margin: 0 4px;
+    border-radius: 16px;
+    color: rgb(39, 39, 42) !important;
+    font-weight: 600;
+
+    &:hover {
+        background-color: #eceaea !important;
+        color: #5f5e5e !important;
+        border: 1px solid #eceaea !important;
+    }
+}
+
+.ant-btn.active {
+    border: 1px solid #0a68ff;
+    color: #0a68ff !important;
+
+    &:hover {
+        border: 1px solid #0a68ff !important;
+        background-color: #c8dbfa !important;
+    }
+}
+
+ .product-list {
+    max-width: 100%;
+}
+.product-list .ant-card-cover img {
+    max-width: 95% !important;
+    margin: auto;
+}
+.product-list .ant-card-body {
+    margin-top: 8px;
+    padding: 8px !important;
+    text-align: left;
+}
+.product-list .top-deal-img {
+    margin-left: 4px;
+    width: 75px;
+    margin-bottom: 4px;
+}
+.product-list .real-prod-img {
+    margin-left: 4px;
+    width: 90px;
+}
+
+// ================== REAL BRAND CSS ===================
+.real-brand {
+    background:linear-gradient(rgba(255, 255, 255, 0) 22.49%, rgb(255, 255, 255) 73.49%), linear-gradient(264.03deg, rgb(220, 229, 251) -10.27%, rgb(234, 236, 255) 35.65%, rgb(213, 236, 253) 110.66%);
+}
+.real-brand .ant-typography {
+    padding-left: 12px;
+}
+.real-brand img {
+    border: 1px solid #edf0f0;
+    border-radius: 8px;
+    &:hover {
+        cursor: pointer;
+    }
+}
