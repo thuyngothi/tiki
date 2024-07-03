@@ -99,13 +99,22 @@ const ProductDetail = () => {
 
                 <Flex vertical className='prod-content wrapper'
                     style={{
-                        width: '55%'
+                        width: '40%'
                     }} >
                     <Flex justify='flex-start' gap='middle' wrap>
                         <img style={{ width: '85px', height: '20px' }} src={top_deal_prod}></img>
                         <img style={{ width: '95px', height: '20px' }} src={real_prod}></img>
                         <img style={{ width: '100px', height: '20px' }} src={turnback}></img>
                         <Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text>
+                    </Flex>
+                </Flex>
+
+                <Flex vertical className='prod-counter wrapper'
+                    style={{
+                        width: '28%'
+                    }} >
+                    <Flex justify='flex-start' gap='middle' wrap>
+                       <Text>Tiki Trading</Text>
                     </Flex>
                 </Flex>
             </Flex>
