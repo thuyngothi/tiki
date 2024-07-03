@@ -17,7 +17,13 @@ const images = [
 const { Text } = Typography
 
 const ProductDetail = () => {
-    const [imageIndex, setImageIndex] = useState(0);
+    const [expandIndex, setExpandIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleChoose = (index) => {
+        setActiveIndex(index);
+        setExpandIndex(index);
+    }
     return (
         <>
             <Flex align='center' className='commitment container-max' gap='small'>
@@ -74,18 +80,17 @@ const ProductDetail = () => {
             <Flex className='product-detail container-max'>
                 <Flex vertical className='prod-image wrapper' gap='small'>
                     <Flex className='expand-image'>
-                        <img src={images[imageIndex]}></img>
+                        <img src={images[expandIndex]}></img>
                     </Flex>
                     <Flex className='list-image' gap='small'>
                         {
                             images.map((image, index) => (
-                                <img 
+                                <img
                                     src={image}
-                                    onClick={()=> {
-                                        let chosen = index 
-                                        setImageIndex(index);                                       
-                                    }}
-                                    onMouseEnter={() => { setImageIndex(index);}}
+                                    onClick={() => handleChoose(index)}
+                                    onMouseEnter={() => setExpandIndex(index)}
+                                    onMouseLeave={() => setExpandIndex(activeIndex)}
+                                    className={`${activeIndex === index? 'active' : ''}`}
                                 ></img>
                             ))
                         }
@@ -94,14 +99,13 @@ const ProductDetail = () => {
 
                 <Flex vertical className='prod-content wrapper'
                     style={{
-                        width:'55%'
+                        width: '55%'
                     }} >
-                    <Flex justify='space-around'>
-                        <img style={{width:'85px', height:'20px'}} src={top_deal_prod}></img>
-                        <img style={{width:'95px', height:'20px'}} src={real_prod}></img>
-                        <img style={{width:'100px', height:'20px'}} src={turnback}></img>
+                    <Flex justify='flex-start' gap='middle' wrap>
+                        <img style={{ width: '85px', height: '20px' }} src={top_deal_prod}></img>
+                        <img style={{ width: '95px', height: '20px' }} src={real_prod}></img>
+                        <img style={{ width: '100px', height: '20px' }} src={turnback}></img>
                         <Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text>
-                        <Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text><Text className='author'>Tác giả: <a>Trần Phách Hàm</a></Text>
                     </Flex>
                 </Flex>
             </Flex>

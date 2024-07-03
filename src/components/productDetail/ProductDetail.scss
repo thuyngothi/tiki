@@ -28,7 +28,11 @@
 }
 .list-image img {
     width: 15%;
+    padding: 2px;
     border-radius: 4px;
+}
+.list-image img.active {
+    border: 2px solid rgb(102, 102, 240);
 }
 
 .prod-content .author a{
