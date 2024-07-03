@@ -12,12 +12,6 @@ function App() {
   return (
     <div className="App">
       <Layout>
-      {/* <div style={{
-            position:"sticky",
-            top:"0px"
-        }}> 
-            ssssđ
-        </div> */}
         <Flex
           justify='center'
           className='header-container'
