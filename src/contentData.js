@@ -37,6 +37,10 @@ import larocheposay from './assets/Real_Brand/larocheposay.jpg'
 import nestle from './assets/Real_Brand/nestle.png'
 
 import electric_1 from './assets/Products/top_deal/homeElectric/electric_1.webp'
+import electric_1_2 from './assets/Products/top_deal/homeElectric/electric_1_2.webp'
+import electric_1_3 from './assets/Products/top_deal/homeElectric/electric_1_3.webp'
+import electric_1_4 from './assets/Products/top_deal/homeElectric/electric_1_4.webp'
+
 import electric_2 from './assets/Products/top_deal/homeElectric/electric_2.webp'
 import electric_3 from './assets/Products/top_deal/homeElectric/electric_3.webp'
 import electric_4 from './assets/Products/top_deal/homeElectric/electric_4.webp'
@@ -353,11 +357,12 @@ export const cameras = [
 export const totalProducts = [
     {
         id: 1,
-        name: 'Nồi áp suất Elmich PCE-1805 dung tích 2.5L - Hàng Chính Hãng',
-        price: '62.700',
-        discount: '-12%',
-        origin_price: '71.100',
+        name: 'Bộ Đôi Kem Dưỡng Chống Lão Hóa Da Ngày Và Đêm Ponds Age Miracle',
+        price: '585.000',
+        discount: '-23%',
+        origin_price: '710.100',
         picture: beauty_1,
+        list_pics: [beauty_1],
         category: 'beauty',
     },
     {
@@ -367,6 +372,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: beauty_2,
+        list_pics: [beauty_2],
         category: 'beauty',
     },
     {
@@ -376,6 +382,7 @@ export const totalProducts = [
         discount: '-28%',
         origin_price: '99.000',
         picture: beauty_3,
+        list_pics: [beauty_3],
         category: 'beauty',
     },
     {
@@ -385,6 +392,7 @@ export const totalProducts = [
         discount: '-7%',
         origin_price: '152.000',
         picture: beauty_4,
+        list_pics: [beauty_4],
         category: 'beauty',
     },
     {
@@ -394,6 +402,7 @@ export const totalProducts = [
         discount: '-30%',
         origin_price: '55.000',
         picture: beauty_5,
+        list_pics: [beauty_5],
         category: 'beauty',
     },
     {
@@ -403,6 +412,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: beauty_6,
+        list_pics: [beauty_6],
         category: 'beauty',
     },
     {
@@ -412,6 +422,7 @@ export const totalProducts = [
         discount: '-12%',
         origin_price: '71.100',
         picture: book_1,
+        list_pics: [book_1],
         category: 'book',
     },
     {
@@ -421,6 +432,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: book_2,
+        list_pics: [book_2],
         category: 'book',
     },
     {
@@ -430,6 +442,7 @@ export const totalProducts = [
         discount: '-28%',
         origin_price: '99.000',
         picture: book_3,
+        list_pics: [book_3],
         category: 'book',
     },
     {
@@ -439,6 +452,7 @@ export const totalProducts = [
         discount: '-7%',
         origin_price: '152.000',
         picture: book_4,
+        list_pics: [book_4],
         category: 'book',
     },
     {
@@ -448,6 +462,7 @@ export const totalProducts = [
         discount: '-30%',
         origin_price: '55.000',
         picture: book_5,
+        list_pics: [book_5],
         category: 'book',
     },
     {
@@ -457,6 +472,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: book_6,
+        list_pics: [book_6],
         category: 'book',
     },
     {
@@ -465,8 +481,8 @@ export const totalProducts = [
         price: '1.000.000',
         discount: '-52%',
         origin_price: '2.000.000',
-
         picture: electric_1,
+        list_pics: [electric_1, electric_1_2, electric_1_3, electric_1_4],
         category: 'homeElectric',
     },
     {
@@ -476,6 +492,7 @@ export const totalProducts = [
         discount: '-11%',
         origin_price: '280.000',
         picture: electric_2,
+        list_pics: [electric_2],
         category: 'homeElectric',
     },
     {
@@ -485,6 +502,7 @@ export const totalProducts = [
         discount: '-20%',
         origin_price: '860.000',
         picture: electric_3,
+        list_pics: [electric_3],
         category: 'homeElectric',
     },
     {
@@ -494,6 +512,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: electric_4,
+        list_pics: [electric_4],
         category: 'homeElectric',
     },
     {
@@ -503,6 +522,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: electric_5,
+        list_pics: [electric_5],
         category: 'homeElectric',
     },
     {
@@ -512,6 +532,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '2.350.000',
         picture: electric_6,
+        list_pics: [electric_6],
         category: 'homeElectric',
     },
     {
@@ -521,6 +542,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '820.000',
         picture: cam_1,
+        list_pics: [cam_1],
         category: 'camera',
     },
     {
@@ -530,6 +552,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '820.000',
         picture: cam_2,
+        list_pics: [cam_2],
         category: 'camera',
     },
     {
@@ -539,6 +562,7 @@ export const totalProducts = [
         discount: '',
         origin_price: '',
         picture: cam_3,
+        list_pics: [cam_3],
         category: 'camera',
     },
     {
@@ -548,6 +572,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '820.000',
         picture: cam_4,
+        list_pics: [cam_4],
         category: 'camera',
     },
     {
@@ -557,6 +582,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '820.000',
         picture: cam_5,
+        list_pics: [cam_5],
         category: 'camera',
     },
     {
@@ -566,6 +592,7 @@ export const totalProducts = [
         discount: '-16%',
         origin_price: '820.000',
         picture: cam_6,
+        list_pics: [cam_6],
         category: 'camera',
     },
 ]

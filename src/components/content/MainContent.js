@@ -34,35 +34,24 @@ const MainContent = () => {
     const [curCategory, setCurCategory] = useState('homeElectrics');
     const [currentData, setCurrentData] = useState(homeElectrics);
 
-    useEffect(()=> {
-        setTimeout(()=>{
-            const result = totalProducts.filter((prod)=> {
+    useEffect(() => {
+        setTimeout(() => {
+            const result = totalProducts.filter((prod) => {
                 return prod.category === topDealCategories[activeCategory].name;
             })
             setCurrentData(result);
-        },50)
-        
-    },[activeCategory])
+        }, 50)
+
+    }, [activeCategory])
 
     console.log(currentData);
 
-    return (
-        <>
-            <Slider slides={slideData} />
-
-            {/*=============== Category ================*/}
-            <Flex justify="space-around" className="category-list wrapper">
-                {categories.map(item => (
-                    <div key={item.id} className="category-item">
-                        <img src={item.picture}></img>
-                        <p className="category-name">{item.desc}</p>
-                    </div>
-                ))}
-            </Flex>
-
-            {/* ============== TOP DEAL ================*/}
+    // Lặp product list nhiều lần
+    const productElements = []
+    for (let i = 0; i < 3; i++) {
+        productElements.push(
             <Flex className="top-deal wrapper" style={{
-                minHeight:"462px"
+                minHeight: "462px"
             }}>
                 <Flex vertical style={{ maxWidth: '100%' }}>
                     <img className="banner-img" src={top_deal}></img>
@@ -83,7 +72,51 @@ const MainContent = () => {
 
                     <br></br>
                     {/* ================ Products List ================ */}
-                   <ProductList currentData={currentData}/>
+                    <ProductList currentData={currentData} />
+                </Flex>
+            </Flex>
+        )
+    }
+
+
+    return (
+        <>
+            <Slider slides={slideData} />
+
+            {/*=============== Category ================*/}
+            <Flex justify="space-around" className="category-list wrapper">
+                {categories.map(item => (
+                    <div key={item.id} className="category-item">
+                        <img src={item.picture}></img>
+                        <p className="category-name">{item.desc}</p>
+                    </div>
+                ))}
+            </Flex>
+
+            {/* ============== TOP DEAL ================*/}
+            <Flex className="top-deal wrapper" style={{
+                minHeight: "462px"
+            }}>
+                <Flex vertical style={{ maxWidth: '100%' }}>
+                    <img className="banner-img" src={top_deal}></img>
+                    <Flex className="topdeal-list">
+                        {topDealCategories.map((item, index) => (
+                            <Button
+                                onClick={() => {
+                                    setActiveCategory(index)
+                                    // setCurCategory(item.name)
+                                }}
+                                className={`${activeCategory === index ? 'active' : ''}`}
+                                key={item.id}
+                            >
+                                {item.content}
+                            </Button>
+                        ))}
+                    </Flex>
+
+                    <br></br>
+                    {/* ================ Products List ================ */}
+                    <ProductList currentData={currentData} />
                 </Flex>
             </Flex>
 
@@ -104,7 +137,11 @@ const MainContent = () => {
                 </Flex>
             </Flex>
 
-            <ProductDetail />
+            {
+                productElements
+            }
+
+            {/* <ProductDetail /> */}
 
             <Footer />
 

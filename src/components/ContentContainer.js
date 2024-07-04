@@ -8,8 +8,7 @@ const { Content, Sider } = Layout;
 
 const ContentContainer = () => {
     return (
-        <>
-          
+        <>          
             <Flex justify='center'>
                 <Layout
                     style={{ padding: '16px 24px', backgroundColor: '#f5f5fa',overflow:"scroll" }}

@@ -1,4 +1,8 @@
 
+sup {
+    text-decoration: underline;
+}
+
 .commitment {
     background-color: #fff;
 }
@@ -20,6 +24,7 @@
     margin-top: 8px;
     padding: 16px 14px;
     width: 30%;
+    height: max-content;
 }
 .prod-image img {
     border: 1px solid #dadada;
@@ -34,7 +39,79 @@
 .list-image img.active {
     border: 2px solid rgb(102, 102, 240);
 }
+.expand-image img{
+    animation-name: fade;
+    animation-duration: 1s;
+}
+@keyframes fade {
+    from {
+        opacity: .5;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
+.product-detail .wrapper {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 14px;
+}
+
+// ============== Prod-content CSS ================= //
 .prod-content .author a{
     color: rgb(13, 92, 182);
+}
+.star-review .ant-typography{
+    font-size: 15px;
+}
+.star-review img {
+    width: 20px;
+}
+.prod-content .main-price {
+    font-size: 28px;
+    color: red;
+    font-weight: 500;   
+}
+.prod-content .discount {
+    color: #777;
+    background-color: #eeeaea;
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+.prod-content .now-delivery{
+    margin-top: 8px;
+}
+.prod-content .now-delivery img{
+    width: 35px;
+}
+
+/// ==================== Tiki Tranding CSS ===================//
+.tiki-trading .tiki-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.tiki-trading .tiki-official {
+    width: 70px;  
+}
+.number-prod .ant-btn {
+    font-size: 20px;
+    vertical-align: middle;
+    width: 40px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.number-prod input{
+    text-align: center;
+    width: 45px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.tiki-trading .add-to-card, 
+.buy-first{
+    color: rgb(10, 104, 255);
+    border: 1px solid #0a68ff;
 }
