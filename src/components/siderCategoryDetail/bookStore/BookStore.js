@@ -256,27 +256,31 @@ const BookStore = () => {
                 return item.category === activeCategory;
             })
             setCurrentData([...data, ...currentData])
-        }
-        else{
-            // Cach 1
-            // const newCategories = activeCategories.filter(item => item != removeCategory)
-            // setActiveCategories(newCategories);
-            // const newData = list_books.filter(item => {
-            //     return newCategories.includes(item.category)
-            // })
-
-            // Cach 2
-            const newData = currentData.filter(item => {
-                return item.category != removeCategory
-            })
-            setCurrentData(newData)
-        }       
+        }         
     }, [activeCategory])
+
+    useEffect(() => {
+        if(removeCategory){
+             // Cach 1
+             const newCategories = activeCategories.filter(item => item != removeCategory)
+             setActiveCategories(newCategories);
+             const newData = list_books.filter(item => {
+                 return newCategories.includes(item.category)
+             })
+ 
+             // Cach 2
+             // const newCategories = activeCategories.filter(item => item != removeCategory)
+             // setActiveCategories(newCategories);
+             // const newData = currentData.filter(item => {
+             //     return item.category != removeCategory
+             // })
+             setCurrentData(newData)
+        }
+    },[removeCategory])
 
     const handleAddActiveCategory = (category) => {
         if(activeCategories.includes(category)){
             setRemoveCategory(category)
-            setActiveCategory(null);
         }
        else{
         setActiveCategory(category)
