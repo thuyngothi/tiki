@@ -1,5 +1,6 @@
 
-import { Button, Flex, Input, Typography } from "antd";
+import { Button, Flex, Input, Typography, Modal } from "antd";
+import { useState } from "react";
 import Search from "antd/es/input/Search";
 import { HomeFilled, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
@@ -8,6 +9,20 @@ import AccountModal from "./AccountModal.js";
 import DeliveryLocationModal from "./DeliveryLocationModal.js";
 
 const CustomHeader = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const showModal = () => {
+        setIsModalOpen(true);
+    }
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    }
+
+    // const [value, setValue] = useState(1)
+    // const onChange = (e) => {
+    //     console.log('radio checked', e.target.value);
+    //     setValue(e.target.value)
+    // }
+
     return (
         <>
             <Flex className="header-content">
@@ -53,13 +68,27 @@ const CustomHeader = () => {
                             <li><a>sách</a></li>
                             <li><a>thể thao</a></li>
                         </ul>
-                        {/* <Flex align="center" className="delivery-location">
+                        <Flex
+                            align="center"
+                            className="delivery-location"
+                            onClick={showModal}
+                        >
                             <img src="https://salt.tikicdn.com/ts/upload/88/5c/9d/f5ee506836792eb7775e527ef8350a44.png"></img>
                             <Typography.Text type="secondary">Giao đến:
                                 <span className="address"> Q.Hoàn Kiếm, P.Hàng Trống, Hà Nội</span>
                             </Typography.Text>
-                        </Flex> */}
-                        <DeliveryLocationModal />
+                        </Flex>
+
+                        <Modal
+                            open={isModalOpen}
+                            footer={null}
+                            onCancel={handleCancel}
+                            width={600}
+                            className="location-modal"
+                        >
+                            <DeliveryLocationModal />
+                        </Modal>
+                        
                     </Flex>
                 </Flex>
             </Flex>

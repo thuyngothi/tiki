@@ -3,14 +3,6 @@ import { useState } from "react";
 
 const DeliveryLocationModal = () => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const showModal = () => {
-        setIsModalOpen(true);
-    }
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    }
-
     const [value, setValue] = useState(1)
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
@@ -19,24 +11,6 @@ const DeliveryLocationModal = () => {
 
     return (
         <>
-            <Flex
-                align="center"
-                className="delivery-location"
-                onClick={showModal}
-            >
-                <img src="https://salt.tikicdn.com/ts/upload/88/5c/9d/f5ee506836792eb7775e527ef8350a44.png"></img>
-                <Typography.Text type="secondary">Giao đến:
-                    <span className="address"> Q.Hoàn Kiếm, P.Hàng Trống, Hà Nội</span>
-                </Typography.Text>
-            </Flex>
-
-            <Modal
-                open={isModalOpen}
-                footer={null}
-                onCancel={handleCancel}
-                width={600}
-                className="location-modal"
-            >
                 <Flex
                     vertical
                     className="modal-content"
@@ -80,9 +54,7 @@ const DeliveryLocationModal = () => {
                     </Flex>
                     <br></br>
                     <Button type="primary" className="decide-btn">GIAO ĐẾN ĐỊA CHỈ NÀY</Button>
-
                 </Flex>
-            </Modal>
         </>
     )
 }

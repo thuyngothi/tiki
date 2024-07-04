@@ -7,6 +7,7 @@ import CustomHeader from './components/header/CustomHeader';
 import ContentContainer from './components/ContentContainer';
 import BookStore from './components/siderCategoryDetail/bookStore/BookStore';
 import HomeLife from './components/siderCategoryDetail/homeLife/HomeLife';
+import ProductDetail from './components/productDetail/ProductDetail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<ContentContainer />}></Route>
           <Route path='/bookstore' element={<BookStore />}></Route>
           <Route path='/homelife' element={<HomeLife />}></Route>
+          <Route path= '/product/:id' element={<ProductDetail />}></Route>
         </Routes>
 
       </Layout>
