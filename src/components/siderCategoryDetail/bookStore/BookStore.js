@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import { Breadcrumb, Flex, Layout, Divider, Typography, Button } from "antd";
+import { useEffect, useState } from 'react'
+import { Breadcrumb, Flex, Layout, Divider, Typography, Button, Card } from "antd";
 import { DownOutlined } from '@ant-design/icons'
 import { Link } from "react-router-dom";
 
 import './BookStore.scss'
 import InsideSideBar from "../siderComponent/InsideSidebar/InsideSideBar";
 import MainContent from "../../content/MainContent";
-import { bookSliders, book_categories } from "./bookData";
+import { bookSliders, book_categories, list_books } from "./bookData";
 import InsideSlider from '../siderComponent/InsideSlider/InsideSlider';
+import top_deal_prod from '../../../assets/Products/top_deal/top_deal_prod.png'
+import real_prod from '../../../assets/Products/top_deal/real_prod.png'
 
 const items = [
     {
@@ -182,53 +184,103 @@ const items = [
 const sort_brand_items = [
     {
         id: 1,
-        name: 'Hồng Hà'
+        name: 'Hồng Hà',
+        value: 'hongha',
     },
     {
         id: 2,
-        name: 'Deli'
+        name: 'Deli',
+        value: 'deli',
     },
     {
         id: 3,
-        name: 'Thiên Long'
+        name: 'Thiên Long',
+        value: 'thienlong',
     },
     {
         id: 4,
-        name: 'Pentel'
+        name: 'Pentel',
+        value: 'pantel',
     },
     {
         id: 5,
-        name: 'Stacom'
+        name: 'Stacom',
+        value: 'stacom',
     },
     {
         id: 6,
-        name: 'KLONG'
+        name: 'KLONG',
+        value: 'klong',
     },
     {
         id: 7,
-        name: 'MAGIC'
+        name: 'MAGIC',
+        value: 'magic',
     },
     {
         id: 8,
-        name: 'Lazy Box'
+        name: 'Lazy Box',
+        value: 'lazybox',
     },
     {
         id: 9,
-        name: 'Fahasa'
+        name: 'Fahasa',
+        value: 'fahasa',
     },
     {
         id: 10,
-        name: 'imFRIDAY'
+        name: 'imFRIDAY',
+        value: 'imfriday',
     },
 ]
 
 const { Title, Text, Paragraph } = Typography;
 const { Content } = Layout;
 const BookStore = () => {
+    // Logic show list category
     const [showModal, setShowModal] = useState(false)
-
     const handleShow = () => {
         setShowModal(!showModal);
+    }
+
+    // Logic show list product depend on category
+    const [activeCategory, setActiveCategory] = useState('default_book');
+    const [activeCategories, setActiveCategories] = useState([])
+    const [currentData, setCurrentData] = useState([]);
+    const [removeCategory, setRemoveCategory] = useState('');
+
+    useEffect(() => {
+        if (activeCategory) {
+            setActiveCategories([...activeCategories, activeCategory])
+            const data = list_books.filter(item => {
+                return item.category === activeCategory;
+            })
+            setCurrentData([...data, ...currentData])
+        }
+        else{
+            // Cach 1
+            // const newCategories = activeCategories.filter(item => item != removeCategory)
+            // setActiveCategories(newCategories);
+            // const newData = list_books.filter(item => {
+            //     return newCategories.includes(item.category)
+            // })
+
+            // Cach 2
+            const newData = currentData.filter(item => {
+                return item.category != removeCategory
+            })
+            setCurrentData(newData)
+        }       
+    }, [activeCategory])
+
+    const handleAddActiveCategory = (category) => {
+        if(activeCategories.includes(category)){
+            setRemoveCategory(category)
+            setActiveCategory(null);
+        }
+       else{
+        setActiveCategory(category)
+       }
     }
 
     return (
@@ -259,7 +311,6 @@ const BookStore = () => {
                         style={{ padding: '16px 24px', backgroundColor: '#f5f5fa' }}
                         className='container-max'
                     >
-
                         {/* =============== Side bar ================ */}
                         <InsideSideBar data={items} />
 
@@ -270,7 +321,7 @@ const BookStore = () => {
                                 <Title style={{ margin: '0px', padding: '8px' }}>Nhà Sách Tiki</Title>
                             </Flex>
 
-                            <InsideSlider bookSliders={bookSliders}/>
+                            <InsideSlider bookSliders={bookSliders} />
 
                             <Flex vertical className="book-category wrapper">
                                 <Title level={4}>Khám phá theo danh mục</Title>
@@ -295,30 +346,43 @@ const BookStore = () => {
                                     }}>
                                         <Text type='secondary'>Thương hiệu</Text>
                                         <Flex justify='space-around' align='center' className='sort-type-item'>
-                                            <Button>Hồng Hà</Button>
-                                            <Button>Deli</Button>
-                                            <Button>Thiên Long</Button>
-                                            <Button>Pentel</Button>
+                                            <Button
+                                                className={`${activeCategories.includes('hongha') ? 'active' : ''}`}
+                                                onClick={() => handleAddActiveCategory('hongha')}
+                                            >Hồng Hà</Button>
+                                            <Button
+                                                className={`${activeCategories.includes('deli') ? 'active' : ''}`}
+                                                onClick={() => handleAddActiveCategory('deli')}
+                                            >Deli</Button>
+                                            <Button
+                                                className={`${activeCategories.includes('thienlong') ? 'active' : ''}`}
+                                                onClick={() => handleAddActiveCategory('thienlong')}
+                                            >Thiên Long</Button>
+                                            <Button
+                                                className={`${activeCategories.includes('pentel') ? 'active' : ''}`}
+                                                onClick={() => handleAddActiveCategory('pentel')}
+                                            >Pentel</Button>
                                             <Button
                                                 shape='circle'
                                                 icon={<DownOutlined />}
                                                 onClick={handleShow}
-                                            ></Button>                                           
+                                            ></Button>
                                         </Flex>
-                                        {showModal && 
+                                        {showModal &&
                                             <Flex className='sort-type-detail'
                                                 style={{ width: '450px' }}
                                                 onClick={handleShow}
                                             >
-                                               <Flex vertical>
+                                                <Flex vertical>
                                                     <Flex wrap gap='small' className='sort-brand-item'>
                                                         {sort_brand_items.map(item => (
                                                             <Button key={item.id}>{item.name}</Button>
                                                         ))}
                                                     </Flex>
-                                               </Flex>
+                                                </Flex>
                                             </Flex>
-                                            }
+                                        }
+
                                     </Flex>
                                     <Divider type='vertical' style={{
                                         color: '#000',
@@ -340,6 +404,67 @@ const BookStore = () => {
                                         </Flex>
                                     </Flex>
                                 </Flex>
+                            </Flex>
+
+                            <Flex className="product-list wrapper" wrap gap='12px'>
+                                {
+                                    currentData.map(item => (
+                                        <>
+                                            {/* <Link to={`/product/${item.id}`}
+                                                style={{
+                                                    width: '23%',
+                                                    margin: '6px 8px'
+                                                }}> */}
+                                            <Card
+                                                key={item.id}
+                                                className="product-item"
+                                                hoverable
+                                                style={{
+                                                    width: '24%',
+                                                    height: '100%'
+                                                }}
+                                                cover={<img alt="camera" src={item.picture} />}
+                                            >
+                                                <Flex vertical>
+                                                    <img className="top-deal-img" src={top_deal_prod}></img>
+                                                    <img className="real-prod-img" src={real_prod}></img>
+                                                    <Paragraph
+                                                        style={{
+                                                            margin: '5px auto',
+                                                            color: '#5d5d5e'
+                                                        }}
+                                                        ellipsis={{
+                                                            rows: 2,
+                                                        }}
+                                                    >
+                                                        {item.name}
+                                                    </Paragraph>
+                                                    <Title
+                                                        style={{
+                                                            margin: '0',
+                                                            fontSize: '18px'
+                                                        }}
+                                                        type={!!item.discount ? 'danger' : ''}>
+                                                        {item.price}<sup>đ</sup>
+                                                    </Title>
+                                                    <Flex gap='small' align="center">
+                                                        {!!item.discount &&
+                                                            <Text className="discount" code>{item.discount}</Text>
+                                                        }
+                                                        {!!item.origin_price &&
+                                                            <Text type="secondary" delete style={{ fontSize: '12px' }}>
+                                                                {item.origin_price}
+                                                            </Text>
+                                                        }
+                                                    </Flex>
+
+                                                </Flex>
+                                            </Card>
+                                            {/* </Link> */}
+                                        </>
+                                    ))
+                                }
+
                             </Flex>
 
                             <MainContent />

@@ -47,10 +47,10 @@ const Footer = () => {
                         <a href='#' target='blank'><Text type='secondary'>Bán hàng cùng Tiki</Text></a>
                         <br></br>
                         <Title level={5}>Chứng nhận bởi</Title>
-                        <Flex className='certified-by'>
-                            <div><a href='#' target='blank'><img src={bo_cong_thuong_1}></img></a></div>
-                            <div><a href='#' target='blank'><img src={bo_cong_thuong_2}></img></a></div>
-                            <div><a href='#' target='blank'><img src={DMCA}></img></a></div>
+                        <Flex align='center' className='certified-by'>
+                            <div><a href='#' target='blank'><img style={{width:'40px'}} src={bo_cong_thuong_1}></img></a></div>
+                            <div><a href='#' target='blank'><img style={{width:'80px'}} src={bo_cong_thuong_2}></img></a></div>
+                            <div><a href='#' target='blank'><img style={{width:'30px'}} src={DMCA}></img></a></div>
                         </Flex>
 
                     </Flex>
