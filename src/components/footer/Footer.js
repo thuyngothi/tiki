@@ -2,16 +2,18 @@
 import { Flex, Typography } from 'antd'
 import './Footer.scss'
 
-import bo_cong_thuong_1 from '../assets/Footer/bo-cong-thuong_1.png'
-import bo_cong_thuong_2 from '../assets/Footer/bo_cong_thuong_2.png'
-import DMCA from '../assets/Footer/dmca.png'
+import bo_cong_thuong_1 from '../../assets/Footer/bo-cong-thuong_1.png'
+import bo_cong_thuong_2 from '../../assets/Footer/bo_cong_thuong_2.png'
+import DMCA from '../../assets/Footer/dmca.png'
+import { payments } from './footerData'
+import tiki_now from '../../assets/Footer/tiki_now.png'
 
 const { Title, Text, Paragraph } = Typography
 const Footer = () => {
     return (
         <>
-            <Flex gap='small' className='footer-container wrapper'>
-                <Flex gap='middle' className='common-infor'>
+            <Flex gap='middle' className='footer-container wrapper'>
+                <Flex gap='large' className='common-infor'>
                     <Flex vertical className='infor-item client-support'>
                         <Title level={5}>Hỗ trợ Khách hàng</Title>
                         <Text type='secondary'>Hotline: <a href='#' target='blank'>1900-6035</a></Text>
@@ -48,11 +50,32 @@ const Footer = () => {
                         <br></br>
                         <Title level={5}>Chứng nhận bởi</Title>
                         <Flex align='center' className='certified-by'>
-                            <div><a href='#' target='blank'><img style={{width:'40px'}} src={bo_cong_thuong_1}></img></a></div>
-                            <div><a href='#' target='blank'><img style={{width:'80px'}} src={bo_cong_thuong_2}></img></a></div>
-                            <div><a href='#' target='blank'><img style={{width:'30px'}} src={DMCA}></img></a></div>
+                            <div><a href='#' target='blank'><img style={{ width: '40px' }} src={bo_cong_thuong_1}></img></a></div>
+                            <div><a href='#' target='blank'><img style={{ width: '80px' }} src={bo_cong_thuong_2}></img></a></div>
+                            <div><a href='#' target='blank'><img style={{ width: '30px' }} src={DMCA}></img></a></div>
                         </Flex>
+                    </Flex>
 
+                    <Flex vertical className='infor-item payments'>
+                        <Title level={5}>Phương thức thanh toán</Title>
+                        <Flex wrap gap='small' className='payment-icon'>
+                            {
+                                payments.map((item, index) => (
+                                    <img key={index} src={item}
+                                        style={{
+                                            width: '20%',
+                                            height:'auto'
+                                        }}
+                                    />
+                                ))
+                            }
+                        </Flex>
+                        <Title level={5}>Dịch vụ giao hàng</Title>
+                        <img src={tiki_now} style={{width: '110px'}}></img>
+                    </Flex>
+
+                    <Flex vertical className='infor-item contact'>
+                        <Title level={5}>Kết nối với chúng tôi</Title>
                     </Flex>
                 </Flex>
             </Flex>

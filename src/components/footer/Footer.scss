@@ -2,12 +2,13 @@
 .footer-container {
     
 }
+.footer-container .common-infor{
+    padding: 8px;
+    width: 100%;
+}
 .infor-item {
     width: 19% !important;
 }
-// .certified-by img {
-//     width: 50%;
-// }
 
 .common-infor a {
     color: #808089;
@@ -15,4 +16,10 @@
         color: #808089;
         text-decoration: underline #808089;
     }
+}
+.common-infor .payment-icon{
+    margin: 12px 0 16px;
+}
+.common-infor .payments img{
+    cursor: pointer;
 }

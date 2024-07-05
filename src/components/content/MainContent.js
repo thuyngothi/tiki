@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import './Content.scss'
 import Slider from "./Slider";
 import slideData from "../../contentData";
-import Footer from "../../footer/Footer";
+import Footer from "../footer/Footer";
 import { categories, cameras, real_brands, books, beauties, homeElectrics, totalProducts } from "../../contentData";
 
 import top_deal from '../../assets/Category/top_deal_prod.png'
