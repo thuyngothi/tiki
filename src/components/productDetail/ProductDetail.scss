@@ -23,7 +23,7 @@ sup {
 .product-detail .prod-image{
     margin-top: 8px;
     padding: 16px 14px;
-    width: 30%;
+    width: 26%;
     height: max-content;
 }
 .prod-image img {
@@ -37,7 +37,7 @@ sup {
     border-radius: 4px;
 }
 .list-image img.active {
-    border: 2px solid rgb(102, 102, 240);
+    border: 1px solid rgb(102, 102, 240);
 }
 .expand-image img{
     animation-name: fade;
@@ -76,9 +76,9 @@ sup {
 .prod-content .discount {
     color: #777;
     background-color: #eeeaea;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 13px;
-    padding: 2px 4px;
+    padding: 0 4px;
 }
 .prod-content .now-delivery{
     margin-top: 8px;
@@ -114,4 +114,15 @@ sup {
 .buy-first{
     color: rgb(10, 104, 255);
     border: 1px solid #0a68ff;
+}
+
+.prod-content .product-list {
+    margin: 0;
+    padding: 12px 2px;
+}
+.prod-content .ant-card{
+    padding-top: 2px;
+}
+.prod-content .ant-card-body{
+    margin-top: 0;
 }

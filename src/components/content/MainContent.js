@@ -34,17 +34,19 @@ const MainContent = () => {
     const [curCategory, setCurCategory] = useState('homeElectrics');
     const [currentData, setCurrentData] = useState(homeElectrics);
 
+    // When MainContent was mounted to DOM, code will run up to down untill meet useEffect.
+    // Go through useEffect and continue run to finish render UI on screen, 
+    // at that time, function callback was going to operate
     useEffect(() => {
-        setTimeout(() => {
+        const timerId = setTimeout(() => {
             const result = totalProducts.filter((prod) => {
                 return prod.category === topDealCategories[activeCategory].name;
             })
             setCurrentData(result);
         }, 50)
-
+        console.log(currentData);
+        return () => clearTimeout(timerId)
     }, [activeCategory])
-
-    console.log(currentData);
 
     // Lặp product list nhiều lần
     const productElements = []
@@ -77,7 +79,6 @@ const MainContent = () => {
             </Flex>
         )
     }
-
 
     return (
         <>
