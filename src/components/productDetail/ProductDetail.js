@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 import './ProductDetail.scss'
+import Footer from '../footer/Footer.js';
+
 import top_deal_prod from '../../assets/Products/top_deal/top_deal_prod.png'
 import real_prod from '../../assets/Products/top_deal/real_prod.png'
 import turnback from '../../assets/Products/top_deal/turnback.png'
@@ -14,7 +16,6 @@ import tiki_logo from '../../assets/Products/top_deal/tiki_logo.webp'
 import official from '../../assets/Products/top_deal/official.webp'
 import DeliveryLocationModal from '../header/DeliveryLocationModal';
 import { totalProducts } from '../../contentData';
-import Footer from '../../footer/Footer.js';
 
 const { Text, Title, Paragraph } = Typography
 
@@ -292,12 +293,14 @@ const ProductDetail = () => {
                                         }
 
                                     </Flex>
+                                    
                                 </Flex>
                             </Flex>
 
                             <Flex gap='middle' vertical className='tiki-trading wrapper'
                                 style={{
                                     width: '25%',
+                                    height:'max-content',
                                     paddingTop: '20px',
                                     position: 'sticky',
                                     top: '0'
