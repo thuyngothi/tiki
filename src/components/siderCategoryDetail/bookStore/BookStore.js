@@ -255,8 +255,9 @@ const BookStore = () => {
             const data = list_books.filter(item => {
                 return item.category === activeCategory;
             })
-            setCurrentData([...data, ...currentData])
-        }         
+            setCurrentData([...data, ...currentData])           
+        }  
+        console.log('useEffect 1');       
     }, [activeCategory])
 
     useEffect(() => {
@@ -274,8 +275,9 @@ const BookStore = () => {
              // const newData = currentData.filter(item => {
              //     return item.category != removeCategory
              // })
-             setCurrentData(newData)
+             setCurrentData(newData)            
         }
+        console.log('useEffect 2')
     },[removeCategory])
 
     const handleAddActiveCategory = (category) => {
@@ -287,12 +289,14 @@ const BookStore = () => {
        }
     }
 
+    // ==================== RETURN JSX ===============================
     return (
         <>
             <Flex
                 justify='center'
                 className="book-store"
             >
+                {console.log('gender UI')}
                 <Flex
                     vertical
                     justify="left"

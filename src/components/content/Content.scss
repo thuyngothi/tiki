@@ -118,9 +118,11 @@
         background-color: #c8dbfa !important;
     }
 }
-
- .product-list {
+.product-list {
     max-width: 100%;
+}
+.product-list .ant-card {
+    padding-top: 2px;
 }
 .product-list .ant-card-cover img {
     max-width: 95% !important;
